@@ -1,5 +1,5 @@
-// Subprojeto ":__ID__" do build do repo principal (incluído automaticamente
-// pelo settings.gradle.kts de lá). Não compila fora desse checkout.
+// Subproject ":__ID__" of the main repo's build (included automatically by
+// its settings.gradle.kts). Does not build outside that checkout.
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.spring)

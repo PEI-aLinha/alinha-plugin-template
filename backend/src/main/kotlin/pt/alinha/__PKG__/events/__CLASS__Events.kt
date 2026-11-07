@@ -1,7 +1,7 @@
 package pt.alinha.__PKG__.events
 
-// Eventos publicados por este plugin (listados em plugin.yaml > publishes).
-// Exemplo:
+// Events published by this plugin (listed in plugin.yaml > publishes).
+// Example:
 //
 // data class SomethingHappened(
 //     override val tenantId: TenantId,

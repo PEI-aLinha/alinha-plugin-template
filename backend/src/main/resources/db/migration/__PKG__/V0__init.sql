@@ -1,2 +1,2 @@
--- Schema próprio do plugin __NAME__. Nenhum outro módulo lê estas tabelas.
+-- Own schema of the __NAME__ plugin. No other module reads these tables.
 create schema if not exists __PKG__;

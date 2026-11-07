@@ -1,4 +1,4 @@
-# Testa ESTE plugin dentro do repo principal (que tem o Core e os outros plugins).
+# Tests THIS plugin inside the main repo (which has the core and the other plugins).
 name: CI
 
 on:
@@ -15,14 +15,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do repo principal com todos os plugins
+      - name: Check out the main repo with every plugin
         uses: actions/checkout@v4
         with:
           repository: PEI-aLinha/alinha
           submodules: recursive
-          token: ${{ secrets.ALINHA_READ_TOKEN || github.token }}   # só preciso se os repos forem privados
+          token: ${{ secrets.ALINHA_READ_TOKEN || github.token }}   # only needed for private repos
 
-      - name: Pôr este commit no lugar do submodule
+      - name: Put this commit in place of the submodule
         run: |
           cd "$PLUGIN_PATH"
           sha="${{ github.event.pull_request.head.sha || github.sha }}"
@@ -34,7 +34,7 @@ jobs:
           distribution: temurin
           java-version: 21
       - uses: gradle/actions/setup-gradle@v4
-      - name: Backend + verificação de módulos
+      - name: Backend + module verification
         run: ./gradlew ":$GRADLE_PROJECT:build" :app:test
 
       - uses: pnpm/action-setup@v4

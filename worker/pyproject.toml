@@ -1,4 +1,4 @@
-# Parte "worker" do provider: collector Python, só leitura, corre no Worker Runtime.
+# The provider's "worker" part: read-only Python collector, runs in the Worker Runtime.
 [project]
 name = "alinha-__ID__"
 version = "0.1.0"

@@ -1,2 +1,2 @@
-# Dono do plugin __NAME__ (aprova PRs). Substituir pelo username do GitHub, com @.
-# *   <dono>
+# Owner of the __NAME__ plugin (approves PRs). Replace with their GitHub username, prefixed with @.
+# *   <owner>

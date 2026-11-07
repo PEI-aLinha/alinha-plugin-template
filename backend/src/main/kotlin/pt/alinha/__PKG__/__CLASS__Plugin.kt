@@ -5,7 +5,7 @@ import pt.alinha.pluginapi.AlinhaPlugin
 import pt.alinha.pluginapi.PluginKind
 import pt.alinha.pluginapi.PluginManifest
 
-/** Registo do plugin no Module Registry do Core. Manter igual ao plugin.yaml. */
+/** Registers the plugin in the core's Module Registry. Keep in sync with plugin.yaml. */
 @Component
 class __CLASS__Plugin : AlinhaPlugin {
     override val manifest = PluginManifest(

@@ -2,10 +2,12 @@ import { definePlugin } from '@alinha/plugin-sdk'
 import { __CLASS__Page } from './pages/__CLASS__Page'
 
 /**
- * Ponto de entrada do plugin no frontend. O shell lê este objeto e monta
- * as rotas e o menu — não há nada a registar à mão no shell.
+ * The plugin's frontend entry point. The shell reads this object and mounts
+ * the routes and the menu — nothing to register by hand in the shell.
  *   area 'client'     → /org/:org/<path>
  *   area 'consultant' → /carteira/<path>
+ * User-visible text (title, label) and paths are in Portuguese, plain language
+ * (UI requirement in the technical report).
  */
 export default definePlugin({
   id: '__ID__',
