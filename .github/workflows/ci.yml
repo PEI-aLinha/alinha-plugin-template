@@ -1,0 +1,57 @@
+# Testa ESTE plugin dentro do repo principal (que tem o Core e os outros plugins).
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+env:
+  PLUGIN_PATH: plugins/__KIND__/__ID__
+  GRADLE_PROJECT: __ID__
+  NPM_PACKAGE: "@alinha/plugin-__ID__"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repo principal com todos os plugins
+        uses: actions/checkout@v4
+        with:
+          repository: PEI-aLinha/alinha
+          submodules: recursive
+          token: ${{ secrets.ALINHA_READ_TOKEN || github.token }}   # só preciso se os repos forem privados
+
+      - name: Pôr este commit no lugar do submodule
+        run: |
+          cd "$PLUGIN_PATH"
+          sha="${{ github.event.pull_request.head.sha || github.sha }}"
+          git fetch -q origin "$sha"
+          git checkout -q --detach "$sha"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Backend + verificação de módulos
+        run: ./gradlew ":$GRADLE_PROJECT:build" :app:test
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Frontend
+        run: |
+          pnpm install
+          pnpm gen:plugins
+          pnpm --filter "$NPM_PACKAGE" typecheck
+          pnpm lint
+
+      - name: Worker (providers)
+        if: hashFiles(format('{0}/worker/pyproject.toml', env.PLUGIN_PATH)) != ''
+        run: |
+          python3 -m pip install -q -e "$PLUGIN_PATH/worker[dev]"
+          python3 -m pytest -q "$PLUGIN_PATH/worker"

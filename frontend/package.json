@@ -1,0 +1,28 @@
+{
+  "name": "@alinha/plugin-__ID__",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@alinha/api-client": "workspace:*",
+    "@alinha/plugin-sdk": "workspace:*",
+    "@alinha/ui": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.104.5",
+    "react": "^19.2.8",
+    "react-router": "^8.5.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-query": "^5.104.5",
+    "@types/react": "^19.2.18",
+    "react": "^19.2.8",
+    "react-router": "^8.5.0",
+    "typescript": "~6.0.2"
+  }
+}

@@ -1,0 +1,10 @@
+# Manifest do plugin — manter igual a __CLASS__Plugin.kt (backend).
+id: __ID__
+name: "__NAME__"
+kind: __KIND__
+version: 0.1.0
+# Onde este repo fica como submodule dentro do repo principal (PEI-aLinha/alinha)
+path: plugins/__KIND__/__ID__
+publishes: []     # eventos que publica (ex.: AssessmentSubmitted)
+consumes: []      # eventos que consome
+permissions: []   # recursos RBAC (ex.: assessment:read, assessment:edit)

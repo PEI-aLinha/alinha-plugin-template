@@ -1,0 +1,11 @@
+build/
+.gradle/
+.kotlin/
+node_modules/
+dist/
+__pycache__/
+*.egg-info/
+.venv/
+.idea/
+*.iml
+.DS_Store
