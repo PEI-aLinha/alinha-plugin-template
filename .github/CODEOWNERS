@@ -1,2 +1,3 @@
-# Owner of the __NAME__ plugin (approves PRs). Replace with their GitHub username, prefixed with @.
-# *   <owner>
+# Owner of the new plugin (approves PRs). Replace with the plugin owner when the repo is created.
+# Defaults to the core maintainers so a generated repo is never left unowned.
+*   @martimgil @afonsosantos11
