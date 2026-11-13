@@ -13,6 +13,9 @@ env:
 
 jobs:
   build:
+    # The placeholders above only get replaced by init-plugin.sh, so skip the build
+    # in the template repo itself; repos created from it are not templates and run it.
+    if: ${{ !github.event.repository.is_template }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out the main repo with every plugin
