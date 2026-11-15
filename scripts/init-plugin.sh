@@ -54,4 +54,4 @@ rm -f scripts/init-plugin.sh
 rmdir scripts 2>/dev/null || true
 
 echo "Plugin '$name' ($kind/$id) initialised: package pt.alinha.$pkg, class ${class}Plugin."
-echo "Remember: user-visible labels/paths in frontend/src/index.ts must be in Portuguese."
+echo "Remember: user-visible labels in frontend/src/index.ts must be in European Portuguese; route paths in English."
