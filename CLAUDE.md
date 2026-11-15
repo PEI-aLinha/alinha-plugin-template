@@ -46,7 +46,7 @@ plugin.yaml                manifest: id, kind, version, path, publishes, consume
 - Every endpoint needs `@RequiresPermission`. Get the tenant from `TenantContext` (never from the request) and
   filter every query by it. Call `AuditTrail.record(...)` for every write, in the same transaction.
 - Frontend: import only `@alinha/plugin-sdk`, `@alinha/ui` and `@alinha/api-client`. Use `useHost()` for the
-  session, permissions and `api`. Labels, titles and **route paths** in European Portuguese. Code and comments in
+  session, permissions and `api`. Labels and titles in European Portuguese. Code, comments and **route paths** in
   English.
 - Providers: collectors are **read-only** and treat collected data as untrusted. Job payloads follow
   `contracts/jobs/*.schema.json` in the main repo. If a contract has to change, stop and follow the main repo's
