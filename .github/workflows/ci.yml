@@ -40,9 +40,9 @@ jobs:
       - name: Backend + module verification
         run: ./gradlew ":$GRADLE_PROJECT:build" :app:test
 
+      # pnpm version comes from packageManager in the main repo's package.json
+
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 22
