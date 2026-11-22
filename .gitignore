@@ -9,3 +9,6 @@ __pycache__/
 .idea/
 *.iml
 .DS_Store
+coverage/
+.coverage
+coverage.xml
