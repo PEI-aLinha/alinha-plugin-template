@@ -22,4 +22,6 @@ jobs:
       plugin-path: plugins/__KIND__/__ID__
       gradle-project: __ID__
       npm-package: "@alinha/plugin-__ID__"
-    secrets: inherit   # ALINHA_READ_TOKEN (private repos only), SONAR_TOKEN
+    secrets:
+      ALINHA_READ_TOKEN: ${{ secrets.ALINHA_READ_TOKEN }}   # private repos only
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
